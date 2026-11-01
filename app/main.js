@@ -2,7 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
   var button = document.getElementById("confirm");
   var hint = document.getElementById("fallback-hint");
 
-  function showHint() {
+  function showHint(reason) {
+    hint.textContent = reason === "exit-failed"
+      ? "Beenden fehlgeschlagen – bitte Home-Taste drücken"
+      : "App würde jetzt beenden";
     hint.hidden = false;
   }
 

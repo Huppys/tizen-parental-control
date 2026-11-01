@@ -1,6 +1,6 @@
 # Installation auf dem Fernseher
 
-Getestetes Zielgerät: Samsung GQ55QN85FAU (2025), Tizen 10.0, TizenBrew 2.0.5.
+Zielgerät: Samsung GQ55QN85FAU (2025), laut Nutzer Tizen 10.0, TizenBrew 2.0.5 (noch kein Testergebnis erfasst).
 
 ## Voraussetzungen
 
@@ -10,9 +10,13 @@ Getestetes Zielgerät: Samsung GQ55QN85FAU (2025), Tizen 10.0, TizenBrew 2.0.5.
 
 ## TizenBrew installieren
 
-TizenBrew 2.0.5 ist auf dem Fernseher bereits installiert. Auf Tizen 8 und neuer
-kann die Installation laut TizenBrew-Doku scheitern. Dann hilft ein Rebuild
-aus dem Quellcode mit Tizen Studio und Certificate Manager.
+TizenBrew 2.0.5 ist auf dem Fernseher bereits installiert. Für eine
+Neuinstallation gilt die offizielle Anleitung:
+<https://github.com/reisxd/TizenBrew/blob/main/docs/README.md>.
+Zuerst den Installer-Weg (Installer-Seite im TV-Browser, Developer Mode an)
+versuchen. Auf Tizen 8 und neuer kann das laut Doku scheitern. Dann hilft ein
+Rebuild aus dem Quellcode mit Tizen Studio und Certificate Manager. Die
+konkreten Schritte sind hier noch nicht verifiziert.
 
 ## App laden
 

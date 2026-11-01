@@ -34,8 +34,12 @@ test("exitApp falls back when exit throws", () => {
   expect(showFallback).toHaveBeenCalledTimes(1);
 });
 
-test("shouldBlockKey blocks 10009 when tizen exists", () => {
-  expect(shouldBlockKey({}, 10009)).toBe(true);
+test("shouldBlockKey blocks 10009 when tizen can exit", () => {
+  expect(shouldBlockKey(fakeTizen(() => {}), 10009)).toBe(true);
+});
+
+test("shouldBlockKey does not block 10009 when tizen.application is missing", () => {
+  expect(shouldBlockKey({}, 10009)).toBe(false);
 });
 
 test("shouldBlockKey does not block 10009 without tizen", () => {
@@ -43,5 +47,17 @@ test("shouldBlockKey does not block 10009 without tizen", () => {
 });
 
 test("shouldBlockKey does not block 13 when tizen exists", () => {
-  expect(shouldBlockKey({}, 13)).toBe(false);
+  expect(shouldBlockKey(fakeTizen(() => {}), 13)).toBe(false);
+});
+
+test("exitApp reports reason no-tizen in the browser", () => {
+  const showFallback = vi.fn();
+  exitApp(undefined, showFallback);
+  expect(showFallback).toHaveBeenCalledWith("no-tizen");
+});
+
+test("exitApp reports reason exit-failed when tizen exists but exit throws", () => {
+  const showFallback = vi.fn();
+  exitApp(fakeTizen(() => { throw new Error("boom"); }), showFallback);
+  expect(showFallback).toHaveBeenCalledWith("exit-failed");
 });
