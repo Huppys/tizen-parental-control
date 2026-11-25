@@ -1,12 +1,11 @@
 {
   "name": "tizen-parental-control",
-  "version": "0.1.0",
-  "description": "Parental-Control-Willkommensseite für Samsung-Tizen-Fernseher (TizenBrew-Modul)",
+  "version": "0.1.1",
+  "description": "Parental-Control-Willkommensseite für Samsung-Tizen-Fernseher (TizenBrew web app)",
   "packageType": "app",
   "appName": "Parental Control",
   "appPath": "app/index.html",
-  "keys": ["Enter"],
-  "files": ["app"],
+  "keys": [],
   "scripts": {
     "test": "vitest run"
   },
